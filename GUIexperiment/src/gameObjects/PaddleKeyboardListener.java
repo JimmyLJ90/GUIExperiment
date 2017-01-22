@@ -17,6 +17,7 @@ public final class PaddleKeyboardListener implements KeyListener {
 		int keyCode = k.getKeyCode();
 		if(keyCode == KeyEvent.VK_RIGHT)
 		{
+			
 			paddle.setxAccel(1);
 			paddle.setMoving(true);
 		}
