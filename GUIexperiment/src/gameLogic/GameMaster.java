@@ -1,6 +1,7 @@
 package gameLogic;
 
 import display.GameWindow;
+import levels.LevelLoader;
 
 public class GameMaster {
 	
@@ -16,9 +17,11 @@ public class GameMaster {
 	
 	public void run()
 	{
+		LevelLoader.getLevelLoader().loadLevel1();
 		while(gameRunning)
 		{
-			
+			displayGame();
+			updateGame();
 		}
 	}
 	
@@ -29,7 +32,7 @@ public class GameMaster {
 	
 	private void displayGame()
 	{
-		
+		screen.repaint();
 	}
 	
 	public static GameMaster getGM()

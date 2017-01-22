@@ -1,10 +1,8 @@
-/simpleGame/
-/resources/
-/GameLogic/
-/gameObjects/
-/gameLogic/
 /display/
 /gameEntryPoint/
-/player.class
-/player/
+/gameLogic/
+/gameObjects/
 /levels/
+/player/
+/resources/
+/simpleGame/
