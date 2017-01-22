@@ -21,7 +21,7 @@ public class LevelLoader {
 	
 	public void loadLevel1()
 	{
-		LevelCreator level = new LevelCreator("level1.txt");
+		LevelCreator level = new LevelCreator("level1");
 		
 		gameObjects.addAll(level.getBlocks());
 		
