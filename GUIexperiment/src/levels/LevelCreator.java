@@ -42,7 +42,7 @@ public class LevelCreator {
 	{
 		InputStream txtFile;
 		BufferedReader reader;
-		txtFile = this.getClass().getResourceAsStream("/resources/"+levelName);
+		txtFile = this.getClass().getResourceAsStream(levelName);
 		try 
 		{
 			reader = new BufferedReader(new InputStreamReader(txtFile,"UTF-8"));
