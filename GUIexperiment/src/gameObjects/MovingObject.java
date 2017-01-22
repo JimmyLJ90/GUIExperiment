@@ -18,10 +18,10 @@ public abstract class MovingObject extends GameObject {
 	
 	
 	
-	public MovingObject(int x, int y, boolean visible, int width, int height,Color color, double xVel, double yVel, double xAccel, double yAccel, 
+	public MovingObject(int x, int y, boolean destroyed, int width, int height,Color color, double xVel, double yVel, double xAccel, double yAccel, 
 			boolean moving) 
 	{
-		super(x, y, visible, width, height, color);
+		super(x, y, destroyed, width, height, color);
 		this.xVel = xVel;
 		this.yVel = yVel;
 		this.xAccel = xAccel;

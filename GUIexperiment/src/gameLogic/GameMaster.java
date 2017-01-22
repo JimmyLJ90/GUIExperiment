@@ -6,13 +6,11 @@ import levels.LevelLoader;
 public class GameMaster {
 	
 	private boolean gameRunning;
-	private GameWindow screen;
 	private static GameMaster INSTANCE;
 	
 	private GameMaster()
 	{
 		gameRunning = true;
-		screen = GameWindow.getGW();
 	}
 	
 	public void run()
@@ -32,7 +30,7 @@ public class GameMaster {
 	
 	private void displayGame()
 	{
-		screen.repaint();
+		GameWindow.getGW().repaint();
 	}
 	
 	public static GameMaster getGM()

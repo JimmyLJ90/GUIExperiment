@@ -21,15 +21,16 @@ public class LevelLoader {
 	
 	public void loadLevel1()
 	{
-		LevelCreator level = new LevelCreator("level1");
+		LevelCreator level = new LevelCreator("level1.txt");
 		
 		gameObjects.addAll(level.getBlocks());
 		
-		Ball ball = new Ball(GameWindow.getGW().getSize().width/2-35-70, 630, true, 10, 10, Color.black, 1, 1, 0, 0, true);
+		Ball ball = new Ball(GameWindow.getGW().getSize().width/2-35-70, 630, false, 10, 10, Color.black, 1, 1, 0, 0, true);
 		
-		Paddle paddle = new Paddle(GameWindow.getGW().getSize().width/2-35, 700, true, 
+		Paddle paddle = new Paddle(GameWindow.getGW().getSize().width/2-35, 700, false, 
 								   70, 10, Color.blue, 0, 0, 0, 0, false, 5);
 		
+		GameWindow.getGW().addKeyListener(paddle.getKeyListeners()[0]);
 		gameObjects.add(ball);
 		gameObjects.add(paddle);
 	}

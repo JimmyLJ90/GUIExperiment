@@ -42,7 +42,7 @@ public class LevelCreator {
 	{
 		InputStream txtFile;
 		BufferedReader reader;
-		txtFile = this.getClass().getResourceAsStream(levelName);
+		txtFile = ClassLoader.getSystemResourceAsStream("resources/"+levelName);
 		try 
 		{
 			reader = new BufferedReader(new InputStreamReader(txtFile,"UTF-8"));
@@ -91,7 +91,7 @@ public class LevelCreator {
 		
 		blockLevel.add(new Block(initialX+cNr*(blockWidth+10), 
 								 rNr*(blockHeight+15)+100, 
-								 true, 
+								 false, 
 								 blockWidth, 
 								 blockHeight, 
 								 Color.red, 
@@ -110,7 +110,7 @@ public class LevelCreator {
 		
 		blockLevel.add(new Block(initialX+cNr*(blockWidth+10), 
 								 rNr*(blockHeight+15)+100, 
-								 false, 
+								 true, 
 								 blockWidth, 
 								 blockHeight, 
 								 Color.red, 

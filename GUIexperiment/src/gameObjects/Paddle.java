@@ -17,9 +17,11 @@ public final class Paddle extends MovingObject {
 	private boolean accelUpgrade;
 	private double widthMod;
 
-	public Paddle(int x, int y, boolean visible, int width, int height,Color color, double xVel, double yVel, double xAccel, double yAccel,
-			boolean moving, double speedMax) {
-		super(x, y, visible, width, height,color, xVel, yVel, xAccel, yAccel, moving);
+	public Paddle(int x, int y, boolean destroyed, int width, int height,
+				  Color color, double xVel, double yVel, double xAccel, double yAccel,
+			      boolean moving, double speedMax) {
+		
+		super(x, y, destroyed, width, height,color, xVel, yVel, xAccel, yAccel, moving);
 		this.speedMax = speedMax;
 		timeWithWidthUpgrade = timeWithSpeedUpgrade = timeWithAccelUpgrade = 0;
 		widthUpgrade = speedUpgrade = accelUpgrade = false;

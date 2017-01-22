@@ -11,10 +11,10 @@ public class Block extends GameObject {
 	private int worth;
 	private boolean speedUpgrade, accelUpgrade, widthUpgrade;
 	
-	public Block(int x, int y, boolean visible, int width, int height,Color color, int worth, 
+	public Block(int x, int y, boolean destroyed, int width, int height,Color color, int worth, 
 			boolean speedUpgrade, boolean accelUpgrade,boolean widthUpgrade) 
 	{
-		super(x, y, visible, width, height,color);
+		super(x, y, destroyed, width, height,color);
 		this.worth = worth;
 		this.speedUpgrade = speedUpgrade;
 		this.accelUpgrade = accelUpgrade;

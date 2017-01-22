@@ -29,6 +29,7 @@ public class GameWindow extends javax.swing.JFrame {
 		this.setSize(size);
 		this.setResizable(false);
 		this.setVisible(true);
+	
 
 	}
 
@@ -41,13 +42,13 @@ public class GameWindow extends javax.swing.JFrame {
 		for(int i = 0; i<gameObjects.size();i++)
 		{
 			GameObject obj = gameObjects.get(i);
-			if(obj.isVisible())
+			if(!obj.isDestroyed())
 			{
 				page.setColor(obj.getBackground());
 				if(obj instanceof Ball)
-					page.drawOval(obj.getX(), obj.getY(), obj.getWidth(), obj.getHeight());
+					page.fillOval(obj.getX(), obj.getY(), obj.getWidth(), obj.getHeight());
 				else
-					page.drawRect(obj.getX(), obj.getY(), obj.getWidth(), obj.getHeight());
+					page.fillRect(obj.getX(), obj.getY(), obj.getWidth(), obj.getHeight());
 				
 			}
 		}
