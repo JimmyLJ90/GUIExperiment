@@ -3,6 +3,8 @@ package gameObjects;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
+import gameLogic.GameMaster;
+
 public final class PaddleKeyboardListener implements KeyListener {
 	
 	Paddle paddle;
@@ -17,14 +19,12 @@ public final class PaddleKeyboardListener implements KeyListener {
 		int keyCode = k.getKeyCode();
 		if(keyCode == KeyEvent.VK_RIGHT)
 		{
-			
-			paddle.setxAccel(1);
-			paddle.setMoving(true);
+			paddle.setLocation((int)(paddle.getX()+1*GameMaster.getGM().timePassed()),paddle.getY());
 		}
 		else if(keyCode == KeyEvent.VK_LEFT)
 		{
-			paddle.setxAccel(-1);
-			paddle.setMoving(true);
+			
+			paddle.setLocation((int)(paddle.getX()-1*GameMaster.getGM().timePassed()),paddle.getY());
 		}
 		
 		
@@ -35,8 +35,7 @@ public final class PaddleKeyboardListener implements KeyListener {
 		int keyCode = k.getKeyCode();
 		if(keyCode == KeyEvent.VK_RIGHT || keyCode == KeyEvent.VK_LEFT)
 		{
-			paddle.setxAccel(0);
-			paddle.setMoving(false);
+			paddle.setxVel(0);
 		}
 		
 	}
