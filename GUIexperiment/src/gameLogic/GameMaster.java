@@ -26,30 +26,32 @@ public class GameMaster {
 		final int FRAMES_PER_SECOND = 60;
 		final int TICKS_PER_SECOND = 1000;
 		final int TICKS_SKIPPED = TICKS_PER_SECOND/FRAMES_PER_SECOND;
+		long nextGameTick = System.currentTimeMillis();
+		final int MAX_FRAMESKIP = 5;
+		int loops;
 		LevelLoader.getLevelLoader().loadLevel1();
 		
 		while(gameRunning)
 		{
+			loops = 0;
 			if(!GameWindow.getGW().isShowing())
 			{
 				gameRunning = false;
 				GameWindow.getGW().dispose();
 			}
-			startCalcTime();
+			
 
-			while(timePassed()==0)
+			while(System.currentTimeMillis()>nextGameTick && loops<MAX_FRAMESKIP)
 			{
-
+				nextGameTick += TICKS_SKIPPED;
+				loops++;
+				displayGame();
 			}
 			
 			updateGame();
-			displayGame();
-			try {
-				TimeUnit.MILLISECONDS.sleep(TICKS_SKIPPED-timePassed());
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			
+			
+		
 
 		}
 	}
@@ -72,7 +74,7 @@ public class GameMaster {
 	{
 		if(p.isMoving())
 		{
-			p.setxVel(p.getxVel()+p.getxAccel()*timePassed()/1000.0);
+			p.setxVel(p.getxVel());
 			p.setLocation((int)(p.getX()+p.getxVel()), p.getY());
 			if(p.getLocation().getX()<=0)
 			{
